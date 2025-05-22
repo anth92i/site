@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Orbitron', sans-serif;
+  background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  color: #ffffff;
+  text-align: center;
+}
+
+@keyframes gradientShift {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+header {
+  padding: 3rem 1rem 1rem;
+}
+
+h1 {
+  font-size: 4rem;
+  color: #00f7ff;
+  text-shadow: 0 0 15px #00f7ff, 0 0 30px #00f7ff;
+  animation: pulseNeon 2s infinite;
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 1.3rem;
+  color: #aaa;
+  margin-top: 0.5rem;
+}
+
+@keyframes pulseNeon {
+  0%, 100% { text-shadow: 0 0 10px #00f7ff, 0 0 20px #00f7ff; }
+  50% { text-shadow: 0 0 20px #00f7ff, 0 0 40px #00f7ff; }
+}
+
+.photo {
+  margin-top: 1.5rem;
+  width: 250px;
+  border-radius: 20px;
+  box-shadow: 0 0 30px #00f7ff;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #0ff;
+  border-radius: 20px;
+  padding: 2rem;
+  margin: 2rem auto;
+  width: 80%;
+  max-width: 700px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: rotateY(3deg) rotateX(3deg);
+}
+
+h2 {
+  color: #0ff;
+  font-size: 2rem;
+}
+
+button {
+  margin-top: 1rem;
+  background: #111;
+  border: 2px solid #0ff;
+  border-radius: 12px;
+  padding: 0.7em 1.5em;
+  color: #0ff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 0 10px #0ff;
+}
+
+button:hover {
+  background: #0ff;
+  color: #111;
+  box-shadow: 0 0 20px #0ff, 0 0 30px #0ff;
+  transform: scale(1.05);
+}
+
+footer {
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
+  color: #ccc;
+}
