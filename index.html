@@ -16,6 +16,7 @@
       <li><a href="#career">Carrière</a></li>
       <li><a href="#works">Œuvres</a></li>
       <li><a href="#recent">Récent</a></li>
+      <li><a href="#feedback">Avis</a></li>
     </ul>
   </nav>
 
@@ -36,7 +37,7 @@
   <header class="main-header">
     <h1>LAFEVE</h1>
     <p class="subtitle">Le flow venu d’une autre galaxie 🌌</p>
-    <img src="lafeve.jpg" alt="Photo de Lafeve" class="photo" />
+    <img src="images/lafeve.jpg" alt="Photo de Lafeve" class="photo" />
   </header>
 
   <main>
@@ -63,10 +64,35 @@
       <p>Le 23 novembre 2023, La Fève publie le clip de Loyal sur sa chaîne Youtube...</p>
       <button onclick="window.open('https://open.spotify.com/artist/7vhBXImu7BDc3WZ9Yq3gGk')">Écouter sur Spotify</button>
     </section>
+
+    <!-- FORMULAIRE GALACTIQUE -->
+    <section class="card" id="feedback">
+      <h2>Laisse ton avis galactique 🚀</h2>
+      <form id="feedback-form">
+        <label for="name">Ton prénom :</label>
+        <input type="text" id="name" name="name" required />
+        <label for="email">Email :</label>
+    <input type="email" id="email" name="email" placeholder="Ton email..." required>
+
+        <label for="message">Ton message :</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+        <select id="rating" name="rating" required>
+      <option value="">Choisis une note</option>
+      <option value="5">⭐⭐⭐⭐⭐ Excellent</option>
+      <option value="4">⭐⭐⭐⭐ Très bien</option>
+      <option value="3">⭐⭐⭐ Moyen</option>
+      <option value="2">⭐⭐ Passable</option>
+      <option value="1">⭐ Mauvais</option>
+    </select>
+
+        <button type="submit">Envoyer dans l’espace ✨</button>
+      </form>
+    </section>
+
   </main>
 
   <footer>
-    <p>Site hommage par Anthony ✨</p>
+    <p>✨ Site hommage par Anthony ✨</p>
   </footer>
 
 </body>

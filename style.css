@@ -7,12 +7,20 @@
 
 body {
   font-family: 'Orbitron', sans-serif;
-  background: radial-gradient(circle at center, #0f0c29 0%, #1c1b3a 70%, #100b2c 100%);
   color: white;
-  overflow-x: hidden;
   min-height: 100vh;
   position: relative;
+  overflow-x: hidden;
   scroll-behavior: smooth;
+
+  /* Background with gradient and image */
+  background-image: url('galaxie.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: #0f0c29;
+  background-blend-mode: overlay;
+  background: radial-gradient(circle at center, #0f0c29 0%, #1c1b3a 70%, #100b2c 100%);
 }
 
 /* NAVIGATION */
@@ -100,7 +108,7 @@ body {
   height: 100vh;
   pointer-events: none;
   overflow: visible;
-  z-index: 1;
+  z-index: 1; /* Sous le contenu mais au-dessus des étoiles */
 }
 
 /* Meteor base style */
@@ -115,6 +123,7 @@ body {
   filter: drop-shadow(0 0 8px #ff6a00);
   transform-origin: center;
   animation-timing-function: linear;
+  animation-iteration-count: infinite;
   animation-fill-mode: forwards;
 }
 
@@ -280,6 +289,8 @@ body {
   backdrop-filter: blur(6px);
   transition: box-shadow 0.3s ease;
   cursor: default;
+  position: relative;
+  z-index: 10;
 }
 
 .card:hover {
@@ -317,35 +328,61 @@ button {
 
 button:hover {
   background: linear-gradient(45deg, #ff66ff, #ff00ff);
-  box-shadow: 0 0 35px #ff00ffdd;
+  box-shadow: 0 0 30px #ff66ffdd;
 }
 
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 1.5rem;
-  background: rgba(15, 10, 45, 0.9);
-  color: #ff99ffcc;
-  font-style: italic;
-  font-size: 1rem;
-  box-shadow: 0 0 20px #ff00ffaa inset;
+/* -------------------- */
+/* FORMULAIRE GALACTIQUE */
+form {
+  background: rgba(30, 10, 60, 0.75);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 0 25px #ff00ffaa;
+  max-width: 600px;
+  margin: 2rem auto;
+  backdrop-filter: blur(6px);
   position: relative;
   z-index: 10;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .main-header h1 {
-    font-size: 3rem;
-  }
+form h2 {
+  color: #ff66ff;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 0 10px #ff66ffcc;
+}
 
-  .card {
-    margin: 1rem;
-    padding: 1.5rem;
-  }
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #fff;
+  text-shadow: 0 0 5px #ffccff;
+}
 
-  .nav-bar {
-    flex-direction: column;
-    gap: 0.8rem;
-  }
+input, textarea, select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1.5rem;
+  border: none;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 1rem;
+  box-shadow: 0 0 10px #ff00ff33;
+  transition: all 0.3s ease;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 15px #ff00ffaa;
+}
+
+form button {
+  display: block;
+  width: 100%;
+  margin-top: 1rem;
+  font-size: 1.2rem;
 }
