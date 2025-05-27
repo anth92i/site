@@ -1,216 +1,351 @@
+/* Fonts & reset */
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
 
+* {
+  margin: 0; padding: 0; box-sizing: border-box;
+}
+
 body {
-  margin: 0;
-  padding: 0;
   font-family: 'Orbitron', sans-serif;
-  background: #000014;
+  background: radial-gradient(circle at center, #0f0c29 0%, #1c1b3a 70%, #100b2c 100%);
+  color: white;
   overflow-x: hidden;
-  color: #e0eaff;
-  text-align: center;
+  min-height: 100vh;
   position: relative;
+  scroll-behavior: smooth;
 }
 
-/* --- Étoiles animées --- */
-.stars, .stars2, .stars3 {
+/* NAVIGATION */
+.nav-bar {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 200%;
-  height: 200%;
-  background-repeat: repeat;
-  z-index: -1;
-  animation: moveStars 100s linear infinite;
-  pointer-events: none;
-  opacity: 0.5;
+  top: 0; left: 0; right: 0;
+  background: rgba(15, 10, 45, 0.9);
+  box-shadow: 0 0 20px #ff00ffaa;
+  z-index: 999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 2rem;
+  user-select: none;
 }
 
-.stars {
-  background-image: radial-gradient(white 1px, transparent 1px);
-  background-size: 2px 2px;
-  opacity: 0.2;
+.nav-title {
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: #ff00ff;
+  text-shadow: 0 0 6px #ff00ff;
 }
 
-.stars2 {
-  background-image: radial-gradient(#82f0ff 1px, transparent 1px);
-  background-size: 3px 3px;
-  opacity: 0.15;
-  animation-duration: 150s;
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
 }
 
-.stars3 {
-  background-image: radial-gradient(#8a2be2 1px, transparent 1px);
-  background-size: 4px 4px;
-  opacity: 0.1;
-  animation-duration: 200s;
+.nav-links li a {
+  color: #ff00ffaa;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  box-shadow: 0 0 8px #ff00ff44;
 }
 
-@keyframes moveStars {
-  from { transform: translate(0, 0); }
-  to { transform: translate(-50%, -50%); }
+.nav-links li a:hover,
+.nav-links li a.active {
+  color: #fff;
+  background-color: #ff00ff88;
+  box-shadow: 0 0 15px #ff00ffcc;
 }
 
-/* --- Animé: dégradé interstellaire --- */
-body::before {
-  content: "";
+/* Background Stars (animated flickering dots) */
+.background-stars {
   position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e, #1b1b3a);
-  background-size: 400% 400%;
-  animation: gradientShift 25s ease infinite;
-  z-index: -2;
-  opacity: 0.9;
-}
-
-@keyframes gradientShift {
-  0% {background-position: 0% 50%;}
-  50% {background-position: 100% 50%;}
-  100% {background-position: 0% 50%;}
-}
-
-/* --- Texte et titres --- */
-header {
-  padding: 3rem 1rem 1rem;
-}
-
-h1 {
-  font-size: 4rem;
-  color: #00ffe7;
-  text-shadow: 0 0 15px #00ffe7, 0 0 30px #8a2be2;
-  animation: pulseNeon 2.5s infinite;
-  margin: 0;
-}
-
-.subtitle {
-  font-size: 1.3rem;
-  color: #bbbcdc;
-  margin-top: 0.5rem;
-}
-
-@keyframes pulseNeon {
-  0%, 100% { text-shadow: 0 0 10px #00ffe7, 0 0 20px #8a2be2; }
-  50% { text-shadow: 0 0 25px #00ffe7, 0 0 50px #8a2be2; }
-}
-
-/* --- Carte de contenu --- */
-.card {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid #8a2be2;
-  border-radius: 20px;
-  padding: 2rem;
-  margin: 2rem auto;
-  width: 80%;
-  max-width: 700px;
-  backdrop-filter: blur(12px);
-  box-shadow: 0 0 20px rgba(130, 240, 255, 0.3), 0 0 40px rgba(138, 43, 226, 0.2);
-  transition: transform 0.3s ease;
-}
-
-.card:hover {
-  transform: rotateY(2deg) rotateX(2deg);
-}
-
-h2 {
-  color: #82f0ff;
-  font-size: 2rem;
-}
-
-/* --- Boutons stylés --- */
-button {
-  margin-top: 1rem;
-  background: #111122;
-  border: 2px solid #00ffe7;
-  border-radius: 12px;
-  padding: 0.7em 1.5em;
-  color: #00ffe7;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: 0.3s;
-  box-shadow: 0 0 10px #8a2be2, 0 0 5px #00ffe7 inset;
-}
-
-button:hover {
-  background: #00ffe7;
-  color: #111122;
-  box-shadow: 0 0 25px #8a2be2, 0 0 35px #00ffe7;
-  transform: scale(1.07);
-}
-
-/* --- Image --- */
-.photo {
-  margin-top: 1.5rem;
-  width: 250px;
-  border-radius: 20px;
-  box-shadow: 0 0 30px #8a2be2, 0 0 50px #00ffe7;
-}
-
-/* --- Footer --- */
-footer {
-  padding: 2rem 1rem;
-  font-size: 0.9rem;
-  color: #99aacc;
-}
-/* --- Météorites animées --- */
-.meteors {
-  position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
+  top: 0; left: 0;
+  background: transparent;
   pointer-events: none;
-  overflow: hidden;
-  z-index: -1;
+  z-index: 0;
 }
 
+.background-stars::after {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background:
+    radial-gradient(white 1px, transparent 2px),
+    radial-gradient(white 1px, transparent 2px),
+    radial-gradient(white 1px, transparent 2px);
+  background-position: 10% 20%, 50% 70%, 90% 40%;
+  background-repeat: repeat;
+  background-size: 100px 100px;
+  animation: flicker 10s infinite alternate;
+  filter: drop-shadow(0 0 1px white);
+}
+
+@keyframes flicker {
+  0% {opacity: 0.4;}
+  50% {opacity: 1;}
+  100% {opacity: 0.4;}
+}
+
+/* Meteors container */
+.meteors {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  overflow: visible;
+  z-index: 1;
+}
+
+/* Meteor base style */
 .meteor {
   position: absolute;
-  top: -10%;
-  width: 2px;
-  height: 100px;
-  background: linear-gradient(45deg, #00ffe7, transparent);
-  opacity: 0.6;
-  transform: rotate(45deg);
-  animation: fall 3s linear infinite;
+  background: linear-gradient(45deg, #ff6a00, #ffde00);
+  border-radius: 50% / 50% 50% 50% 50%;
+  box-shadow:
+    0 0 10px #ff6a00,
+    0 0 30px #ffde00;
+  opacity: 0.85;
+  filter: drop-shadow(0 0 8px #ff6a00);
+  transform-origin: center;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
 }
 
-.meteor:nth-child(1) {
-  left: 10%;
-  animation-delay: 0s;
-  animation-duration: 4s;
-}
-.meteor:nth-child(2) {
-  left: 35%;
-  animation-delay: 2s;
-  animation-duration: 5s;
-}
-.meteor:nth-child(3) {
-  left: 60%;
-  animation-delay: 1s;
-  animation-duration: 3.5s;
-}
-.meteor:nth-child(4) {
-  left: 75%;
-  animation-delay: 3s;
-  animation-duration: 4.5s;
-}
-.meteor:nth-child(5) {
-  left: 90%;
-  animation-delay: 4s;
+/* Different sizes */
+.meteor.small {
+  width: 10px;
+  height: 25px;
+  animation-name: meteor-fly-small;
   animation-duration: 5s;
 }
 
-@keyframes fall {
+.meteor.medium {
+  width: 20px;
+  height: 50px;
+  animation-name: meteor-fly-medium;
+  animation-duration: 7s;
+}
+
+.meteor.large {
+  width: 30px;
+  height: 80px;
+  animation-name: meteor-fly-large;
+  animation-duration: 9s;
+}
+
+/* Animations for meteor flying (top-right to bottom-left) */
+@keyframes meteor-fly-small {
   0% {
-    transform: translateY(-100px) translateX(0) rotate(45deg);
+    transform: translateX(120vw) translateY(-20vh) rotate(45deg);
     opacity: 0;
   }
   10% {
-    opacity: 0.6;
+    opacity: 1;
   }
   100% {
-    transform: translateY(120vh) translateX(-300px) rotate(45deg);
+    transform: translateX(-40vw) translateY(120vh) rotate(45deg);
     opacity: 0;
   }
 }
 
+@keyframes meteor-fly-medium {
+  0% {
+    transform: translateX(110vw) translateY(-10vh) rotate(40deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-50vw) translateY(130vh) rotate(40deg);
+    opacity: 0;
+  }
+}
+
+@keyframes meteor-fly-large {
+  0% {
+    transform: translateX(130vw) translateY(-30vh) rotate(50deg);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-60vw) translateY(150vh) rotate(50deg);
+    opacity: 0;
+  }
+}
+
+/* Position each meteor randomly with delay */
+.meteor:nth-child(1) {
+  top: 10vh;
+  left: -20vw;
+  animation-delay: 0s;
+}
+
+.meteor:nth-child(2) {
+  top: 25vh;
+  left: -10vw;
+  animation-delay: 2s;
+}
+
+.meteor:nth-child(3) {
+  top: 50vh;
+  left: -15vw;
+  animation-delay: 4s;
+}
+
+.meteor:nth-child(4) {
+  top: 70vh;
+  left: -5vw;
+  animation-delay: 6s;
+}
+
+.meteor:nth-child(5) {
+  top: 80vh;
+  left: -25vw;
+  animation-delay: 1s;
+}
+
+.meteor:nth-child(6) {
+  top: 40vh;
+  left: -30vw;
+  animation-delay: 3s;
+}
+
+.meteor:nth-child(7) {
+  top: 60vh;
+  left: -18vw;
+  animation-delay: 5s;
+}
+
+.meteor:nth-child(8) {
+  top: 30vh;
+  left: -22vw;
+  animation-delay: 7s;
+}
+
+/* MAIN HEADER */
+.main-header {
+  margin-top: 5rem;
+  text-align: center;
+  padding: 2rem 1rem;
+  z-index: 10;
+  position: relative;
+}
+
+.main-header h1 {
+  font-size: 4rem;
+  color: #ff00ff;
+  text-shadow: 0 0 10px #ff00ffcc;
+}
+
+.subtitle {
+  font-size: 1.4rem;
+  color: #dda0ddcc;
+  margin-top: 0.5rem;
+  font-style: italic;
+  text-shadow: 0 0 6px #dd99ffbb;
+}
+
+.photo {
+  margin-top: 1.5rem;
+  max-width: 300px;
+  border-radius: 50%;
+  box-shadow: 0 0 25px #ff00ff88;
+  transition: transform 0.4s ease;
+  cursor: pointer;
+}
+
+.photo:hover {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 0 35px #ff00ffcc;
+}
+
+/* CARD SECTIONS */
+.card {
+  background: rgba(25, 15, 40, 0.75);
+  margin: 2rem auto;
+  max-width: 850px;
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 0 20px #ff00ffaa;
+  backdrop-filter: blur(6px);
+  transition: box-shadow 0.3s ease;
+  cursor: default;
+}
+
+.card:hover {
+  box-shadow: 0 0 40px #ff00ffdd;
+}
+
+.card h2 {
+  font-size: 2.2rem;
+  color: #ff66ff;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 10px #ff66ffcc;
+}
+
+.card p {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: #ddd;
+  margin-bottom: 1.25rem;
+}
+
+/* Buttons */
+button {
+  cursor: pointer;
+  background: linear-gradient(45deg, #ff00ff, #ff66ff);
+  border: none;
+  padding: 0.6rem 1.5rem;
+  font-size: 1rem;
+  color: white;
+  font-weight: 700;
+  border-radius: 30px;
+  box-shadow: 0 0 20px #ff00ffbb;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  user-select: none;
+}
+
+button:hover {
+  background: linear-gradient(45deg, #ff66ff, #ff00ff);
+  box-shadow: 0 0 35px #ff00ffdd;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  background: rgba(15, 10, 45, 0.9);
+  color: #ff99ffcc;
+  font-style: italic;
+  font-size: 1rem;
+  box-shadow: 0 0 20px #ff00ffaa inset;
+  position: relative;
+  z-index: 10;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .main-header h1 {
+    font-size: 3rem;
+  }
+
+  .card {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+
+  .nav-bar {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+}

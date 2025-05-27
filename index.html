@@ -3,62 +3,71 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Lafeve — Le Flow du Futur</title>
+  <title>LAFEVE — Le Flow du Futur</title>
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <header>
+
+  <nav class="nav-bar">
+    <h1 class="nav-title">LAFEVE</h1>
+    <ul class="nav-links">
+      <li><a href="#bio" class="active">Bio</a></li>
+      <li><a href="#career">Carrière</a></li>
+      <li><a href="#works">Œuvres</a></li>
+      <li><a href="#recent">Récent</a></li>
+    </ul>
+  </nav>
+
+  <div class="background-stars"></div>
+
+  <div class="meteors">
+    <!-- 8 météorites de tailles et vitesses variées -->
+    <div class="meteor small"></div>
+    <div class="meteor medium"></div>
+    <div class="meteor large"></div>
+    <div class="meteor medium"></div>
+    <div class="meteor small"></div>
+    <div class="meteor large"></div>
+    <div class="meteor medium"></div>
+    <div class="meteor small"></div>
+  </div>
+
+  <header class="main-header">
     <h1>LAFEVE</h1>
     <p class="subtitle">Le flow venu d’une autre galaxie 🌌</p>
     <img src="lafeve.jpg" alt="Photo de Lafeve" class="photo" />
   </header>
 
-  <section class="card">
-    <h2>Qui est Lafeve ?</h2>
-    <p>La Fève, de son vrai nom Louis Ambroise Germain, né le 26 juin 1999 dans le 20e arrondissement de Paris, est un rappeur et producteur français d’origine kino-congolaise et camerounaise[3].
+  <main>
+    <section class="card" id="bio">
+      <h2>Qui est Lafeve ?</h2>
+      <p>La Fève, de son vrai nom Louis Ambroise Germain, né le 26 juin 1999 dans le 20e arrondissement de Paris, est un rappeur et producteur français d’origine kino-congolaise et camerounaise.</p>
+      <p>En 2021, il est un membre du mouvement musical new wave du hip-hop français. Sa musique est jugée innovante, utilisant une sélection éclectique de flows, productions et refrains.</p>
+    </section>
 
-En 2021, il est un membre du mouvement musical new wave du hip-hop français. Sa musique est jugée innovante, utilisant une sélection éclectique de flows, productions et refrains.</p>
-  </section>
+    <section class="card" id="career">
+      <h2>Sa carrière fulgurante</h2>
+      <p>Il commence à rapper avec son ami Dundy qu'il fréquente depuis l'enfance et qui est lui aussi rappeur. Il publie d'abord de courtes mixtapes sur SoundCloud et YouTube, comme la trilogie Nocturnes, et les mixtapes Paresse 1 et 2.</p>
+      <p>Il rassemble dans une première mixtape nommée empty the bin (littéralement « vider la poubelle ») toutes les chansons non retenues de 2018 à 2020...</p>
+    </section>
 
-  <section class="card">
-    <h2>Sa carrière fulgurante</h2>
-    <p>
- Il commence à rapper avec son ami Dundy qu'il fréquente depuis l'enfance et qui est lui aussi rappeur. Il publie d'abord de courtes mixtapes sur SoundCloud et YouTube, comme la trilogie Nocturnes, et les mixtapes Paresse 1 et 2. Il rassemble dans une première mixtape nommée empty the bin (littéralement « vider la poubelle ») toutes les chansons non retenues de 2018 à 2020, à l'instar de Kendrick Lamar avec Untitled Unmastered. Trois autres éditions voient le jour : empty the bin vol.2 (2019-2020), empty the bin vol.3 (2020-2022) et empty the bin vol.4 (2022-2024). Avant l'année 2020, La Fève n'est exposé qu'à un public underground</p>
-  </section>
+    <section class="card" id="works">
+      <h2>Les œuvres popularisantes</h2>
+      <p>Le 15 décembre 2021, La Fève publie son projet ERRR. L'album connaît un réel succès, et le single Mauvais payeur devient disque d'or en 2022, puis disque de platine en 2023.</p>
+      <button onclick="window.open('https://open.spotify.com/artist/7vhBXImu7BDc3WZ9Yq3gGk')">Écouter sur Spotify</button>
+    </section>
 
-  <section class="card">
-    <h2>Les oeuvres popularisante</h2>
-    <p>Le 15 décembre 2021, La Fève publie son projet ERRR. L'album connaît un réel succès, et le single Mauvais payeur devient disque d'or au cours de l'année 2022, et disque de platine en 2023.Le projet est perçu par la critique comme une « bombe » dans le hip-hop français, les critiques applaudissent le style épuré de l'album, que Jérémie Léger de Radio France définira comme « cohérent, sans fioriture et calibré au millimètre près. » L'album ERRR est certifié disque d'or en 2023.</p>
-    <button onclick="window.open('https://open.spotify.com/artist/7vhBXImu7BDc3WZ9Yq3gGk')">Écouter sur Spotify</button>
-  </section>
-  
-  <section class="card">
-    <h2>Les oeuvres récente</h2>
-    <p>Le 23 novembre 2023, La Fève publie le clip de Loyal sur sa chaîne Youtube où il insère le lien pour la précommande de son prochain album avec une cover exclusive pour les personnes ayant précommandé le CD. Le clip est réalisé par Walone et détaille la vie de l'artiste après la sortie de Errr, le mettant en séquence entre Atlanta, Paris et divers festivals.
+    <section class="card" id="recent">
+      <h2>Les œuvres récentes</h2>
+      <p>Le 23 novembre 2023, La Fève publie le clip de Loyal sur sa chaîne Youtube...</p>
+      <button onclick="window.open('https://open.spotify.com/artist/7vhBXImu7BDc3WZ9Yq3gGk')">Écouter sur Spotify</button>
+    </section>
+  </main>
 
-Sorti le 22 décembre, l'album comprend des collaborations avec les rappeurs Yung L.A., Knucks, Tiakola & Zequin ainsi qu'avec le producteur américain Zaytoven. Il cumule plus de 18 000 ventes en première semaine.
-
-Le 6 septembre 2024, La Fève sort une mixtape surprise nommée BIGLAF.
-
-En novembre, il apparait sur le titre Eolienne avec La Fouine, sur sa mixtape Capitale du Crime Radio.
-
-Le 20 décembre 2024, La Fève sort une mixtape surprise de nouveau intitulée Empty the Bin vol. 4. Il en profitera aussi pour publier les mixtapes Empty the bin vol 1, 2 et 3 sur les plateformes de streaming. Les albums consistent à la publication de ses sons « poubelle », donc ses sons qu'il ne mettra pas dans un album.</p>
-<button onclick="window.open('https://open.spotify.com/artist/7vhBXImu7BDc3WZ9Yq3gGk')">Écouter sur Spotify</button>
-  
-
-
-</section>
   <footer>
     <p>Site hommage par Anthony ✨</p>
   </footer>
+
 </body>
-
-<div class="meteors">
-  <div class="meteor"></div>
-  <div class="meteor"></div>
-  <div class="meteor"></div>
-  <div class="meteor"></div>
-  <div class="meteor"></div>
-</div>
-
 </html>
