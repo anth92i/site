@@ -78,22 +78,6 @@ body {
   z-index: 0;
 }
 
-.background-stars::after {
-  content: "";
-  position: absolute;
-  width: 200%;
-  height: 200%;
-  background:
-    radial-gradient(white 1px, transparent 2px),
-    radial-gradient(white 1px, transparent 2px),
-    radial-gradient(white 1px, transparent 2px);
-  background-position: 10% 20%, 50% 70%, 90% 40%;
-  background-repeat: repeat;
-  background-size: 100px 100px;
-  animation: flicker 10s infinite alternate;
-  filter: drop-shadow(0 0 1px white);
-}
-
 @keyframes flicker {
   0% {opacity: 0.4;}
   50% {opacity: 1;}
@@ -385,4 +369,15 @@ form button {
   width: 100%;
   margin-top: 1rem;
   font-size: 1.2rem;
+}
+#background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -2;
+  opacity: 0.4; /* ajuste si tu veux + ou - visible */
+  pointer-events: none;
 }
